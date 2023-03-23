@@ -1,0 +1,37 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+//辗转相除法实现
+int Way(int m, int n)
+{
+    int tmp;
+    //求最大公约数
+    tmp = m % n;
+    if (tmp != 0)
+    {
+        m = n;
+        n = tmp;
+        Way(m, n);
+    }
+    else
+        return n;
+}
+
+
+int main()
+{
+    int m = 0, n = 0;
+    int temp = 0;
+    int r = 0;//接受函数返回值
+    scanf("%d%d", &m, &n);
+    //确保m>n
+    if (m < n)
+    {
+        temp = m;
+        m = n;
+        n = temp;
+    }
+    r = Way(m, n);
+    printf("最大公约数为：%d\n", r);
+    printf("最小公倍数为：%d\n", (m * n) / r);
+    return 0;
+}
