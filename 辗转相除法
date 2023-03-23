@@ -1,10 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-//Õ·×ªÏà³ý·¨ÊµÏÖ
+//è¾—è½¬ç›¸é™¤æ³•å®žçŽ°
 int Way(int m, int n)
 {
     int tmp;
-    //Çó×î´ó¹«Ô¼Êý
+    //æ±‚æœ€å¤§å…¬çº¦æ•°
     tmp = m % n;
     if (tmp != 0)
     {
@@ -21,9 +21,9 @@ int main()
 {
     int m = 0, n = 0;
     int temp = 0;
-    int r = 0;//½ÓÊÜº¯Êý·µ»ØÖµ
+    int r = 0;//æŽ¥å—å‡½æ•°è¿”å›žå€¼
     scanf("%d%d", &m, &n);
-    //È·±£m>n
+    //ç¡®ä¿m>n
     if (m < n)
     {
         temp = m;
@@ -31,7 +31,7 @@ int main()
         n = temp;
     }
     r = Way(m, n);
-    printf("×î´ó¹«Ô¼ÊýÎª£º%d\n", r);
-    printf("×îÐ¡¹«±¶ÊýÎª£º%d\n", (m * n) / r);
+    printf("æœ€å¤§å…¬çº¦æ•°ä¸ºï¼š%d\n", r);
+    printf("æœ€å°å…¬å€æ•°ä¸ºï¼š%d\n", (m * n) / r);
     return 0;
 }
