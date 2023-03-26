@@ -1,0 +1,42 @@
+//遍历数组
+//记录下最大值的下标
+#include<stdio.h>
+#define N 10
+
+int main()
+{
+    int a[N][N];
+    int m  = 0, n = 0;
+    int i = 0, j = 0;
+    int max_i = 0, max_j = 0;//最大值的下标
+    int max;
+    //设置数组大小
+    scanf("%d,%d",&m,&n);
+    for(i = 0;i < m;i++)
+    {
+        for(j = 0;j<n;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    //遍历数组找最大值
+    max = a[max_i][max_j];
+    for(i = 0;i < m;i++)
+    {
+        for(j = 0;j<n;j++)
+        {
+            if(a[i][j]>max)
+            {
+                max_i = i;
+                max_j =j;
+                max = a[i][j];
+            }
+        }
+    }
+
+
+    printf("Input m, n:Input %d*%d array:\n",m,n);
+    printf("max=%d, row=%d, col=%d\n",max,max_i+1,max_j+1);//题目没有要求返回下下标，直接加1即可
+
+    return 0;
+}
