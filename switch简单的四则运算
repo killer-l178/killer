@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+//switch检查符号，进行分支操作
+
+
+int main()
+{
+double a, b;
+char c;
+scanf("%lf%c%lf",&a,&c,&b);
+int ch = c;
+switch(ch)
+{
+  case '+':
+  printf("%.2f+%.2f=%.2f\n",a,b,a+b");
+  break;
+  case '-':
+  printf(""%.2f-%.2f=%.2f\n",a,b,a-b"");
+  break;
+  case '*':
+  printf(""%.2f*%.2f=%.2f\n",a,b,a*b"");
+  break;
+  case '/':
+  printf(""%.2f/%.2f=%.2f\n",a,b,a/b"");
+  
+}
+return 0;
+}
