@@ -1,0 +1,27 @@
+//循环，每判断一次步数加1
+//偶数除2，奇数-1；
+class Solution {
+public:
+    int numberOfSteps(int num) 
+    {
+        int step = 0;
+        while(num != 0)
+        {
+            if(num % 2 == 0)
+            {
+                step++;
+                int temp = num / 2;
+                cout<<"步骤 "<<step<<")"<<num<<" 是偶数，除以 2 得到 "<<temp<<" 。"<<endl;
+                num = temp; 
+            }
+            else if(num % 2 != 0)
+            {
+                step++;
+                int temp = num - 1;
+                cout<<"步骤 "<<step<<")"<<num<<" 是奇数，减 1 得到 "<<temp<<" 。"<<endl;
+                num = temp; 
+            }
+        }
+        return step;
+    }
+};
