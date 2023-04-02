@@ -1,0 +1,34 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1101,5): warning MSB8027: 名为 main.cpp 的两个或更多文件将生成到同一位置的输出。这会导致错误的生成结果。   调用的文件是 GreedySnake-master\main.cpp, Main.cpp。
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1101,5): warning MSB8027: 名为 tools.cpp 的两个或更多文件将生成到同一位置的输出。这会导致错误的生成结果。   调用的文件是 GreedySnake-master\tools.cpp, Tools.cpp。
+  controller.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.h(11,24): error C2614: “StartInterface”: 非法的成员初始化:“speed”不是基或成员
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\controller.cpp(56,18): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\controller.cpp(343,18): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\controller.cpp(517,18): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  food.cpp
+  main.cpp
+  map.cpp
+  point.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\point.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\point.cpp(8,18): error C2001: 常量中有换行符
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\point.cpp(9,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\point.cpp(14,18): error C2001: 常量中有换行符
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\point.cpp(15,1): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  snake.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\snake.cpp(73,9): error C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\snake.cpp(75,14): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\snake.cpp(79,18): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  startinterface.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.h(11,24): error C2614: “StartInterface”: 非法的成员初始化:“speed”不是基或成员
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.cpp(10,15): error C2065: “speed”: 未声明的标识符
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.cpp(24,15): error C2065: “speed”: 未声明的标识符
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\startinterface.cpp(39,15): error C2065: “speed”: 未声明的标识符
+  tools.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\GreedySnake-master\tools.cpp(9,5): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Main.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\Tools.cpp(9,5): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Tools.cpp
+D:\代码公开\C-freshman-prectice\贪吃蛇\贪吃蛇\Tools.cpp(9,5): error C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  正在生成代码...

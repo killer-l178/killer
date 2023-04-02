@@ -1,0 +1,1 @@
+void SetWindowSize(int cols, int lines);
