@@ -1,0 +1,34 @@
+//求两个或三个正整数的最大数，用带默认参数的函数实现。
+#include<iostream>
+
+int Max(int a, int b, int c = 0, int max = -1)
+{
+	if (a > max)
+		max = a;
+	if (b > max)
+		max = b;
+	if (c > max)
+		max = c;
+	return max;
+}
+
+int main()
+{
+	int a,b,c;
+	int judge;
+	int m;
+	std::cout << "How number do you need judge?" << std::endl;
+	std::cin >> judge;
+	if (judge == 3)
+	{
+		std::cin >> a >> b >> c;
+			m = Max(a, b, c);
+	}
+	else if (judge == 2)
+	{
+		std::cin >> a >> b;
+			m = Max(a, b);
+	}
+	std::cout << "The max number is :" << m << std::endl;
+	std::cin.get();
+}
