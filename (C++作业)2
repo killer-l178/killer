@@ -1,0 +1,20 @@
+//对三个变量按由小到大的顺序排序，要求使用变量的引用
+#include<iostream>
+
+int main()
+{
+	int arr[3] = { 1, 2, 3 };
+
+	int& a = arr[0];
+	int& b = arr[1];
+	int& c = arr[2];
+
+	if (b < a)
+		a = b;
+	if (c < a)
+		a = c;
+	if (c < b)
+		b = c;
+	std::cout << a << b << c << std::endl;
+	return 0;
+}
