@@ -1,0 +1,40 @@
+#include<iostream>
+
+class Cylinder
+{
+private:
+	int length;
+	int width;
+	int height;
+//类中的函数定义在类外的子写法
+public:
+	int V;
+	void Get_value();
+	void Calculation();
+	void Display();
+};
+
+void Cylinder::Get_value()
+{
+	std::cin >> length >> width >> height;
+}
+
+void Cylinder::Calculation()
+{
+	V = length * width * height;
+}
+
+void Cylinder::Display()
+{
+	std::cout << "the cub V is : " << V << std::endl;
+}
+
+int main()
+{
+	Cylinder Cub;
+	std::cout << "请依次输入该柱体的长、宽、高" << std::endl;
+	Cub.Get_value();
+	Cub.Calculation();
+	Cub.Display();
+	std::cin.get();
+}
