@@ -1,0 +1,34 @@
+#include<iostream>
+
+class Cylinder
+{
+private:
+	int length;
+	int width;
+	int height;
+//在类中定义函数功能
+public:
+	int V;
+	void Get_value()
+	{
+		std::cin >> length >> width >> height;
+	}
+	void Calculation()
+	{
+		 V = length * width * height;
+	}
+	void Display()
+	{
+		std::cout << "the cub V is : " << V << std::endl;
+	}
+};
+
+int main()
+{
+	Cylinder Cub;
+	std::cout << "请依次输入该柱体的长、宽、高" << std::endl;
+	Cub.Get_value();
+	Cub.Calculation();
+	Cub.Display();
+	std::cin.get();
+}
