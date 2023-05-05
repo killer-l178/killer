@@ -1,0 +1,55 @@
+#include<iostream>
+
+class Sale
+{
+private:
+	int num;//员工排号
+	int quantity;
+	double price;
+	static double discount;
+	static double sum;
+	static int n;
+public:
+	Sale(int m, int q, double p)
+		: num(m), quantity(q), price(p) {};
+	void total();
+	static double average();
+	static void display();
+};
+
+double Sale::discount = 0.95;
+double Sale::sum = 0;
+int Sale::n = 0;
+
+int main()
+{
+	Sale s[3] = { Sale(101,5,23.5), Sale(102,12,24.56), Sale(103, 100, 21.5)};
+	for (int i = 0; i < 3; i++)
+	{
+		s[i].total();
+	}
+	Sale::display();
+	std::cin.get();
+}
+
+void Sale::total()
+{
+	double rate = 1.0;
+	if (quantity > 10)
+	{
+		rate *= 0.98;
+	}
+	sum = sum + quantity * price * rate * discount;//累计销售款
+	n += quantity;//累计销售总量
+}
+
+double Sale::average()
+{
+	return (sum / n);
+}
+
+void Sale::display()
+{
+	std::cout << sum << std::endl;
+	std::cout << average() << std::endl;
+}
