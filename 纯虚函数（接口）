@@ -4,14 +4,14 @@
 class Printable
 {
 public:
-	virtual std::string GetClassName() = 0;//´¿Ğéº¯Êı£¬×÷ÎªÒ»¸ö½Ó¿Ú
+	virtual std::string GetClassName() = 0;//çº¯è™šå‡½æ•°ï¼Œä½œä¸ºä¸€ä¸ªæ¥å£
 };
 
 class Entity : public Printable
 {
 public:
-	 virtual std::string GetName() { return "GetName£ºEntity"; }//GetNameÊÇĞéº¯Êı£¬ÀàĞÍ¿ÉÒÔ¸Ä±ä
-	 std::string GetClassName() override { return "Entity"; }//¸¸ÀàPrintableĞ´·½·¨£¨Ã»ÓĞÊµÏÖ£©£¬×ÓÀàÊµÏÖ
+	 virtual std::string GetName() { return "GetNameï¼šEntity"; }//GetNameæ˜¯è™šå‡½æ•°ï¼Œç±»å‹å¯ä»¥æ”¹å˜
+	 std::string GetClassName() override { return "Entity"; }//çˆ¶ç±»Printableå†™æ–¹æ³•ï¼ˆæ²¡æœ‰å®ç°ï¼‰ï¼Œå­ç±»å®ç°
 };
 
 class Player : public Entity
@@ -22,11 +22,11 @@ public:
 	Player(const std::string& name)
 		:m_Name(name) {}
 
-	std::string GetName() override { return m_Name; }//±íÃ÷ÕâÊÇÒ»¸ö¸²Ğ´º¯Êı
+	std::string GetName() override { return m_Name; }//è¡¨æ˜è¿™æ˜¯ä¸€ä¸ªè¦†å†™å‡½æ•°
 	std::string GetClassName() override { return "killer"; }
 };
 
-void Print_Name(Entity* entity)//²ÎÊıµÄÀàĞÍÊÇEntity
+void Print_Name(Entity* entity)//å‚æ•°çš„ç±»å‹æ˜¯Entity
 {
 	std::cout << entity->GetName() << std::endl;
 }
@@ -42,8 +42,8 @@ int main()
 	Print_Name(e);
 
 	Player* p = new Player("GetName:Killer");
-	//²ÎÊıÀàĞÍÊÇEntity£¬µ÷ÓÃº¯ÊıÑ°ÕÒµ±·¨Ê±ÓÅÏÈ´ÓEntity¡£
-	Print_Name(p);//Ïë´òÓ¡³öµÄÓ¦¸ÃÊÇPlayer
+	//å‚æ•°ç±»å‹æ˜¯Entityï¼Œè°ƒç”¨å‡½æ•°å¯»æ‰¾å½“æ³•æ—¶ä¼˜å…ˆä»Entityã€‚
+	Print_Name(p);//æƒ³æ‰“å°å‡ºçš„åº”è¯¥æ˜¯Player
 	Print(e);
 	Print(p);
 	
