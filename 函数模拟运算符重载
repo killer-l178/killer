@@ -1,0 +1,43 @@
+//用函数模拟
+
+#include<iostream>
+using namespace std;
+
+class Complex
+{
+private:
+	double real;
+	double image;
+
+public:
+	Complex() { real = 0; image = 0; }
+	Complex(double r, double i) { real = r, image = i; }
+	Complex Complex_add(Complex& c2);
+	void display();
+};
+
+Complex Complex::Complex_add(Complex& c2)//c2引用做形参
+{
+	Complex c;
+	c.real = this->real + c2.real;
+	c.image = this->image + c2.image;
+
+/*
+	c.real = real + c2.real;//real数据是源于对象中的	
+	c.image = image + c2.image;//image数据是源于对象中的	
+*/
+	return c;
+}
+
+void Complex::display()
+{
+	cout << "(" << real << "," << image << ")" << endl;
+}
+
+
+int main()
+{
+	Complex c1(3, 4), c2(5, -10), c3;
+	c3 = c1.Complex_add(c2);
+	cin.get();
+}
