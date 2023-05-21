@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class Complex
+{
+private:
+	double real;
+	double image;
+
+public:
+	Complex() { real = 0; image = 0; }
+	Complex(int r, int i) { real = r; image = i; }
+	Complex operator+(Complex& c2);
+	friend ostream& operator<<(ostream&,Complex&);
+};
+
+Complex Complex::operator+(Complex& c2)
+{
+	return Complex(real + c2.real, image + c2.image);
+}
+
+ostream& operator <<(ostream& output, Complex& c)//第一个参数必须是osteram类
+{
+	output << "(" << c.real;
+	if (c.image >= 0) { output << "+"; }
+	cout << c.image << "i" << endl;
+	return output;
+}
+
+int main()
+{
+	Complex c1(2, 1), c2(1, 4), c3;
+	c3 = c1 + c2;
+	cout << c3;//cout 是ostream的对象
+	cin.get();
+}
