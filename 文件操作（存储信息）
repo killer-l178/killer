@@ -1,0 +1,342 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<cstdlib>
+#include<iomanip>
+using namespace std;
+//int main()
+//{
+	/*const char* pn = "killer";
+	cout << pn;
+	cout << endl;
+	cout << (void*)pn;*/
+
+	/*long val = 560031841;
+	std::cout.write((char*)&val, sizeof(long));*/
+	/*std::cout << 1.0 / 9.0;
+	cout << endl;
+	std::cout << (1.0 * 1.0e4);*/
+	//int n;
+	//cin >> n;//随机输入一个数字，看他平方后的不同进制位表示
+	//cout << "n n*n\n";
+	//cout << n << "\t" << n * n << " " << "decimal\n";
+	//cout << hex;//16进制表示
+	//cout << n << "\t" << n * n << " " << "hexadecimal\n";
+	//cout << oct;//8进制表示
+	//cout << n << "\t" << n * n << " " << "octal\n";
+//}
+
+//将流指向文件
+//
+//int main()
+//{
+//	//把cin中输入的内容fcout,输入到文件中
+//	string filename;
+//	cout << "Enter name for new file:";
+//	cin >> filename;
+//	ofstream fout(filename.c_str());
+//	fout << "write to file\n";//写入文件
+//	cout << "enter your secret number: ";
+//	string secret;
+//	cin >> secret;
+//	fout << "Your secret number is: " << secret << endl;
+//	fout.close();//closeFile
+//
+//	//创建文件输入流
+//	//输入流读取了文件中的内容，在用cout输出到屏幕上
+//	ifstream fin(filename.c_str());
+//	cout << "Here are the content of " << filename << ":\n";
+//	char ch;
+//	while (fin.get(ch))
+//	{
+//		cout << ch;
+//	}
+//	cout << "Done\n";
+//	fin.close();
+//}
+//
+//int main(int argc, char* argv[])
+//{
+//	if (argc == 1)
+//	{
+//		cerr << "Usage: " << argv[0] << "filename[s]\n";
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	ifstream fin;
+//	long count;
+//	long total = 0;
+//	char ch;
+//
+//	for (int file = 1; file < argc; file++)
+//	{
+//		fin.open(argv[file]);//j将输入流连接到argv[file]
+//		if (!fin.is_open())
+//		{
+//			cerr << "Could not open" << argv[file] << endl;
+//			fin.clear();
+//			continue;
+//		}
+//		count = 0;
+//		while (fin.get(ch))
+//			count++;
+//		cout << count << "characters in" << argv[file] << endl;
+//		total += count;
+//		fin.clear();
+//		fin.close();
+//	}
+//	cout << total << "character in all files\n";
+//}
+
+//
+//const char* file = "guests.txt";
+//int main()
+//{
+//	using namespace std;
+//	char ch;
+//	//show initial contents
+//	ifstream fin;
+//	fin.open(file);
+//
+//	if (fin.is_open())
+//	{
+//		cout << "here are the current contents of the"
+//			<< file << "file:\n";
+//		while (fin.get(ch))
+//			cout << ch;
+//		fin.close();
+//	}
+//	
+//
+////add new names
+//	ofstream fout(file, ios::out | ios::app);
+//	if (!fout.is_open())
+//	{
+//		cerr << "Can`t open" << file << "file for output.\n";
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	cout << "Enter guest name (enter a blank line to quite:)\n";
+//	string name;
+//	while(getline(cin,name) && name.size()>0)
+//	{
+//		fout << name << endl;
+//	}
+//	fout.close();
+//	//show revised file
+//	fin.clear();
+//	fin.open(file);
+//	if (fin.is_open())
+//	{
+//		cout << "Here are the new content of the"
+//			<< file << "file:\n";
+//		while (fin.get(ch))
+//		{
+//			cout << ch;
+//		}
+//		fin.close();
+//	}
+//	cout << "Done.\n";
+//	return 0;
+//}
+
+
+//将结构以文本形式保存
+//const int Lim = 20;
+//struct planet
+//{
+//	char name[Lim];
+//	double population;
+//	double g;
+//}; planet p1;
+//
+//void Wfile(struct planet& p)
+//{
+//	strcpy_s(p.name, "killer");
+//	p.population = 10 * 1e5;
+//	p.g = 10 * 10e8;
+//}
+//
+//int main()
+//{
+//	void Wfile(planet p1);
+//	ofstream fout("planet.dat", ios_base::out | ios_base::app);
+//	if (!fout.is_open())
+//	{
+//		cerr << "faile to open the “planet.dat” ";
+//	}
+//	fout << p1.name << " " << p1.population << " " << p1.g << "\n";
+//	cout << " success ";
+//}
+
+//将文件用二进制模式保存
+//inline void eatline() { while (std::cin.get() != '\n') continue; }
+//struct planet
+//{
+//	char name[20];
+//	double population;
+//	double g;
+//};
+//
+//const char* file = "planets.dat";
+//
+//int main()
+//{
+//	planet p1;
+//	cout << fixed << right;
+//	ifstream fin;
+//	fin.open(file, ios_base::in | ios_base::binary);
+//
+//	if (fin.is_open())
+//	{
+//		cout << "here are the current contents of the"
+//			<< file << "file:\n";
+//		while (fin.read((char*)&p1, sizeof p1))
+//		{
+//			cout << setw(20) << p1.name << ":"
+//				<< setprecision(0) << setw(12) << p1.population
+//				<< setprecision(2) << setw(6) << p1.g << endl;
+//		}
+//		fin.close();
+//	}
+//
+////add new names
+//	ofstream fout(file, ios_base::out | ios_base::app | ios_base::binary);
+//	if (!fout.is_open())
+//	{
+//		cerr << "Can`t open" << file << "file for output.\n";
+//		exit(EXIT_FAILURE);
+//	}
+//
+//	cout << "Enter planet name (enter a blank line to quite:)\n";
+//	cin.get(p1.name, 20);
+//	while (p1.name[0] != '\0')
+//	{
+//		eatline();
+//		cout << "Enter planetary populatoin: ";
+//		cin >> p1.population;
+//		cout << "Enter planet`s acceleration of gravity: ";
+//		cin >> p1.g;
+//		eatline();
+//		fout.write((char*)&p1, sizeof p1);
+//		cout << "Enter plant name(Enter a blank line to quit):\n";
+//		cin.get(p1.name, 20);
+//	}
+//	fout.close();
+//	//show revised file
+//	fin.clear();
+//	fin.open(file, ios_base::binary | ios_base::in);
+//	if (fin.is_open())
+//	{
+//		cout << "Here are the new content of the "
+//			<< file << " file:\n";
+//		while (fin.read((char *) &p1, sizeof p1))
+//		{
+//			cout << setw(20) << p1.name << ": "
+//				<< setprecision(0) << setw(12) << p1.population
+//				<< setprecision(2) << setw(6) << p1.g << endl;
+//		}
+//		fin.close();
+//	}
+//	cout << "Done.\n";
+//	return 0;
+//	
+//}
+
+
+inline void eatline() { while (std::cin.get() != '\n') continue; }
+const int Lim = 20;
+struct planet
+{
+	char name[Lim];
+	double population;
+	double g;
+}; planet p1;
+
+//打开文件从头开始读
+
+const char* file = "planets.dat";
+
+int main()
+{
+	fstream finout;//read and write stream
+	finout.open(file, ios::in | ios::out | ios::binary);
+	int ct = 0;
+	if (finout.is_open())
+	{
+		finout.seekg(0); // go to beginning
+		cout << "Here are the current content of the " << file << "file:\n";
+		while (finout.read((char*)&p1, sizeof p1))
+		{
+			cout << ct++ << ": " << setw(Lim) << p1.name << ": "
+				<< setprecision(0) << setw(12) << p1.population
+				<< setprecision(2) << setw(6) << p1.g << endl;
+		}
+		if (finout.eof())
+			finout.clear();
+		else
+		{
+			cerr << "Error in reading " << file << ".\n";
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		cerr << file << "could not be opened -- bye.\n";
+		exit(EXIT_FAILURE);
+	}
+
+	//change a record
+	cout << "Enter the record number you wish to change: ";
+	long rec;
+	cin >> rec;
+	eatline();
+	if (rec < 0 || rec > ct)
+	{
+		cerr << "Invalid record number -- bye\n";
+		exit(EXIT_FAILURE);
+	}
+	streampos place = rec * sizeof p1;
+	finout.seekg(place);
+	if (finout.fail())
+	{
+		cerr << "Error on attempted seek\n";
+		exit(EXIT_FAILURE);
+	}
+
+	finout.read((char*)&p1, sizeof p1);
+	cout << "Your selection:\n";
+	cout << rec << ": " << setw(12) << p1.population
+		<< setprecision(0) << setw(12) << p1.population
+		<< setprecision(2) << setw(6) << p1.g << endl;
+	if (finout.eof())
+		finout.clear();
+	
+	cout << "Enter plant name: ";
+	cin.get(p1.name, Lim);
+	eatline();
+	cout << "Enter planetary population: ";
+	cin >> p1.population;
+	cout << "Enter plant`s acceleration of gravity";
+	cin >> p1.g;
+	finout.seekp(place);
+	finout.write((char*)&p1, sizeof p1) << flush;
+	if (finout.fail())
+	{
+		cerr << "Error on attempted write\n";
+		exit(EXIT_FAILURE);
+	}
+
+	//show revised file
+	ct = 0;
+	finout.seekg(0);
+	cout << "Here are the new content of the " << file << " file:\n";
+	while (finout.read((char*)& p1, sizeof p1))
+	{
+		cout << ct++ << ": " << setw(Lim) << p1.name << ":"
+			<< setprecision(0) << setw(12) << p1.population
+			<< setprecision(2) << setw(6) << p1.g << endl;
+	}
+	finout.close();
+	cout << "Done.\n";
+}
